@@ -7,7 +7,7 @@ function App() {
   const [currentStatus, setCurrentStatus] = useState(idle)
  
   let goku = currentStatus;
-  const kickWindup = [kickWindup1, kickWindup2];
+  const kickWindup = [kickWindup1, kickWindup2, idle];
   const kickAnimation = () => {
     for (let i=0; i < kickWindup.length; i ++){
       setTimeout(function() {
@@ -16,14 +16,11 @@ function App() {
     }
   }
 
-  if (currentStatus === idle){
-    kickAnimation();
-  }
 
 
   return (
     <div className="App">
-      <img src={goku}/>
+      <img onClick={() => {kickAnimation()} }src={goku}/>
     </div>
   );
 }
